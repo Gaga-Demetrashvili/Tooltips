@@ -1,0 +1,105 @@
+/** @format */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tooltip__wrapper {
+  max-width: 1400px;
+  background-color: lightblue;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tooltip__wrapper:first-child {
+  margin-bottom: 80px;
+}
+
+.tooltip {
+  padding: 5px 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tooltip:hover > .tooltip__text {
+  opacity: 1;
+}
+
+.tooltip__image__container {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.tooltip__image {
+  width: 100%;
+  height: 100%;
+}
+
+.tooltip__item:hover {
+  cursor: pointer;
+}
+
+.tooltip__item:hover + .tooltip__text {
+  opacity: 1;
+}
+
+.tooltip__text {
+  max-width: 400px;
+  width: max-content;
+  opacity: 0;
+  position: relative;
+  padding: 5px 10px;
+  background-color: bisque;
+  border-radius: 8px;
+  transition: all 0.4s;
+  display: flex;
+  gap: 20px;
+}
+
+.tooltip__text::before {
+  content: "";
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent bisque transparent;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.radio {
+  max-width: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.radio__container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "text text"
+    "btn-1 btn2";
+  grid-template-columns: repeat(2, 80px);
+  grid-template-rows: repeat(2, 30px);
+  row-gap: 5px;
+  column-gap: 20px;
+}
+
+.text {
+  grid-area: text;
+  text-align: center;
+}
